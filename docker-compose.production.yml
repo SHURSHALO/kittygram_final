@@ -3,6 +3,7 @@ version: '3'
 volumes:
   pg_data_production:
   static_volume:
+  media_volume:
 
 services:
   db:
@@ -23,11 +24,13 @@ services:
     command: cp -r /app/build/. /frontend_static/
     volumes:
       - static_volume:/frontend_static
+      - media_volume:/var/www/kittygram/media
 
   gateway:
     image: shurshalo/kittygram_gateway
     env_file: .env
     volumes:
       - static_volume:/staticfiles/
+      - media_volume:/var/www/kittygram/media
     ports:
       - 9000:80
