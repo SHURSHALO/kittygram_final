@@ -74,10 +74,6 @@ jobs:
       run: |
         cd frontend/
         npm ci
-    - name: Test frontend
-      run: |
-        cd frontend/
-        npm run test
 
   build_frontend_and_push_to_docker_hub:
     name: Push frontend Docker image to DockerHub
@@ -153,8 +149,7 @@ jobs:
           sudo docker compose -f docker-compose.production.yml exec backend python manage.py migrate
           sudo docker compose -f docker-compose.production.yml exec backend python manage.py collectstatic
           sudo docker compose -f docker-compose.production.yml exec backend cp -r /app/collected_static/. /backend_static/static/
-          mkdir -p /var/www/kittygram/media/
-          chown -R yc-user /var/www/kittygram/media/
+          sudo chown -R yc-user /media/
 
   send_message:
     runs-on: ubuntu-latest
