@@ -19,7 +19,7 @@ services:
     volumes:
       - static_volume:/backend_static
       - media_volume:/app/media
-    restart: always
+    restart: alway
 
   frontend:
     image: shurshalo/kittygram_frontend
