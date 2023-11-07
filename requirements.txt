@@ -36,6 +36,7 @@ PyJWT==2.8.0
 pytest==6.2.4
 pytest-django==4.4.0
 pytest-pythonpath==0.7.3
+python-decouple==3.8
 python3-openid==3.2.0
 pytz==2023.3.post1
 PyYAML==6.0
@@ -50,4 +51,3 @@ typing_extensions==4.8.0
 uritemplate==4.1.1
 urllib3==2.0.7
 webcolors==1.11.1
-gunicorn==20.1.0
