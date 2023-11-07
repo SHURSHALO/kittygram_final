@@ -7,10 +7,11 @@ volumes:
 
 services:
   db:
-    image: postgres:13.10
+    image: postgres:13.10-alpine
     env_file: .env
     volumes:
       - pg_data_production:/var/lib/postgresql/data
+    restart: always
 
   backend:
     image: shurshalo/kittygram_backend
@@ -18,12 +19,15 @@ services:
     volumes:
       - static_volume:/backend_static
       - media_volume:/app/media
+    restart: always
+
   frontend:
     image: shurshalo/kittygram_frontend
     env_file: .env
     command: cp -r /app/build/. /frontend_static/
     volumes:
       - static_volume:/frontend_static
+    restart: always
 
   gateway:
     depends_on:
@@ -36,3 +40,4 @@ services:
       - media_volume:/media
     ports:
       - 9000:80
+    restart: always
