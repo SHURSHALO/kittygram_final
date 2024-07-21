@@ -10,6 +10,8 @@ git clone git@github.com:SHURSHALO/kittygram_final.git
 Если их у вас нет, вы можете скачать и установить их с https://www.docker.com/get-started/
 
 ### Соберите Docker-образы:
+Переименуйте .env.example в просто .env или напишите собственный по примеру.
+
 Запустите команду для сборки Docker-образов вашего проекта, предполагая, что ваш файл docker-compose.yml находится в корневой директории проекта:
 
 docker compose up -d
