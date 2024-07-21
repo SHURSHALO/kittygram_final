@@ -12,12 +12,12 @@ git clone git@github.com:SHURSHALO/kittygram_final.git
 ### Соберите Docker-образы:
 Запустите команду для сборки Docker-образов вашего проекта, предполагая, что ваш файл docker-compose.yml находится в корневой директории проекта:
 
-docker-compose build
+docker compose up -d
 
-### Запустите сервисы:
-Запустите все сервисы, определенные в файле docker-compose.yml, с помощью следующей команды:
+Затем в выполните миграции в той же директории проекта
 
-docker compose up
+docker compose exec backend python manage.py migrate
+
 
 ### Ваши сервисы будут доступны по адресу http://localhost:9000
 
