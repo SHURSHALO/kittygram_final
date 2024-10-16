@@ -25,4 +25,3 @@ docker compose exec backend python manage.py migrate
 ```
 
 ### Ваши сервисы будут доступны по адресу http://localhost:9000
-
